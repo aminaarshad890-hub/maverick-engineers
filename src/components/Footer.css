@@ -1,0 +1,349 @@
+/* =========================================
+   MAVERICK ENGINEERS - FOOTER
+========================================= */
+
+.footer {
+  width: 100%;
+
+  background: #071525;
+
+  color: #ffffff;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 75px 5% 60px;
+
+  display: grid;
+
+  grid-template-columns: 1.4fr 0.8fr 1fr 1.4fr;
+
+  gap: 55px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-company {
+  max-width: 360px;
+}
+
+.footer-brand {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+}
+
+.footer-brand img {
+  width: 55px;
+  height: 55px;
+
+  object-fit: contain;
+}
+
+.footer-brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.footer-brand-text span {
+  color: #1689df;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.footer-brand-text small {
+  margin-top: 5px;
+
+  color: #1689df;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.footer-company > p {
+  margin-top: 22px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.footer-contact-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 24px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(22, 137, 223, 0.5);
+
+  border-radius: 5px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.footer-contact-button:hover {
+  background: #1689df;
+
+  border-color: #1689df;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  margin-bottom: 22px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.footer-column > a {
+  margin-bottom: 13px;
+
+  color: #94a3b8;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  transition: color 0.25s ease;
+}
+
+.footer-column > a:hover {
+  color: #1689df;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footer-contact > a {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  width: 100%;
+
+  word-break: break-word;
+}
+
+.footer-contact > a svg,
+.footer-contact > p svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #1689df;
+}
+
+.footer-contact > p {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-container {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 20px 5%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .footer-container {
+    padding-left: 4%;
+    padding-right: 4%;
+
+    grid-template-columns: 1.3fr 0.8fr 1fr 1.3fr;
+
+    gap: 35px;
+  }
+
+  .footer-bottom-container {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px 35px;
+
+    padding: 65px 5% 50px;
+  }
+
+  .footer-company {
+    max-width: 450px;
+  }
+
+  .footer-bottom-container {
+    padding: 20px 5%;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding: 55px 20px 45px;
+  }
+
+  .footer-company {
+    max-width: 100%;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 17px;
+  }
+
+  .footer-bottom-container {
+    padding: 18px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .footer-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-bottom-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer-brand-text span {
+    font-size: 17px;
+  }
+}
