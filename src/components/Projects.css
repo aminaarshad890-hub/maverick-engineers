@@ -1,0 +1,549 @@
+.projects-section {
+  padding: 110px 0;
+  background: #f7f9fc;
+  overflow: hidden;
+}
+
+.projects-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+
+  align-items: center;
+  gap: 70px;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.projects-intro {
+  max-width: 470px;
+}
+
+.projects-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  color: #1689df;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.projects-label::before {
+  content: "";
+
+  width: 35px;
+  height: 2px;
+
+  background: #1689df;
+}
+
+.projects-intro h2 {
+  margin: 0 0 25px;
+
+  color: #1689df;
+
+  font-size: clamp(42px, 5vw, 64px);
+
+  line-height: 1.05;
+}
+
+.projects-intro h2 span {
+  display: block;
+
+  color: #1689df;
+}
+
+.projects-intro p {
+  margin: 0 0 30px;
+
+  color: #687487;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.projects-view-btn {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 13px 21px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #1689df;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.projects-view-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(22, 137, 223, 0.25);
+}
+
+/* =========================
+   ORBIT AREA
+========================= */
+
+.projects-orbit-area {
+  position: relative;
+
+  width: 570px;
+  height: 570px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer Circle */
+
+.projects-orbit-area::before {
+  content: "";
+
+  position: absolute;
+
+  width: 510px;
+  height: 510px;
+
+  border: 1px dashed rgba(22, 137, 223, 0.25);
+
+  border-radius: 50%;
+}
+
+/* =========================
+   ROTATING ORBIT
+========================= */
+
+.projects-orbit {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.2s linear;
+}
+
+/* =========================
+   PROJECT ITEM
+========================= */
+
+.project-orbit-item {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 145px;
+  height: 145px;
+
+  margin: -72.5px;
+
+  cursor: pointer;
+
+  /*
+    Item moves around the circle.
+    The second rotation keeps the card straight.
+  */
+
+  transform:
+    rotate(var(--angle))
+    translateY(-255px);
+
+  transition:
+    transform 0.4s ease,
+    z-index 0.3s ease;
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-orbit-card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 4px solid #ffffff;
+
+  background: #ffffff;
+
+  /*
+    Counter rotation keeps image/card straight
+    while the project moves around the orbit.
+  */
+
+  transform:
+    rotate(calc(var(--angle) * -1));
+
+  box-shadow:
+    0 12px 30px rgba(15, 35, 60, 0.15);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-orbit-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+/* =========================
+   PROJECT OVERLAY
+========================= */
+
+.project-orbit-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  /*
+    Extra padding keeps text
+    inside circular boundary.
+  */
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: rgba(7, 25, 48, 0.78);
+
+  color: #ffffff;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Category */
+
+.project-orbit-overlay span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #5db8ff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+/* Project Name */
+
+.project-orbit-overlay h3 {
+  width: 100%;
+
+  max-width: 105px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  text-align: center;
+
+  overflow-wrap: break-word;
+
+  word-break: normal;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.project-orbit-item:hover {
+  z-index: 20;
+}
+
+.project-orbit-item:hover .project-orbit-card {
+  /*
+    Counter rotation + scale
+    keeps project name straight.
+  */
+
+  transform:
+    rotate(calc(var(--angle) * -1))
+    scale(1.2);
+
+  border-color: #1689df;
+
+  box-shadow:
+    0 18px 45px rgba(22, 137, 223, 0.35);
+}
+
+.project-orbit-item:hover img {
+  transform: scale(1.08);
+}
+
+.project-orbit-item:hover .project-orbit-overlay {
+  opacity: 1;
+}
+
+/* =========================
+   ACTIVE PROJECT
+========================= */
+
+.project-orbit-item.active .project-orbit-card {
+  border-color: #1689df;
+
+  box-shadow:
+    0 18px 45px rgba(22, 137, 223, 0.4);
+}
+
+/* =========================
+   CENTER
+========================= */
+
+.projects-orbit-center {
+  position: absolute;
+
+  width: 175px;
+  height: 175px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 8px solid #eaf5fd;
+
+  box-shadow:
+    0 15px 40px rgba(15, 35, 60, 0.1);
+
+  color: #152238;
+
+  z-index: 10;
+}
+
+.projects-orbit-center span {
+  font-size: 17px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.projects-orbit-center strong {
+  margin-top: 4px;
+
+  color: #1689df;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .projects-intro {
+    max-width: 650px;
+  }
+
+  .projects-orbit-area {
+    width: 560px;
+    height: 560px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .projects-section {
+    padding: 75px 0;
+  }
+
+  .projects-container {
+    width: 92%;
+  }
+
+  .projects-intro h2 {
+    font-size: 42px;
+  }
+
+  .projects-orbit-area {
+    width: 340px;
+    height: 340px;
+  }
+
+  .projects-orbit-area::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .project-orbit-item {
+    width: 90px;
+    height: 90px;
+
+    margin: -45px;
+
+    transform:
+      rotate(var(--angle))
+      translateY(-150px);
+  }
+
+  .project-orbit-card {
+    border-width: 3px;
+
+    transform:
+      rotate(calc(var(--angle) * -1));
+  }
+
+  .project-orbit-item:hover .project-orbit-card {
+    transform:
+      rotate(calc(var(--angle) * -1))
+      scale(1.15);
+  }
+
+  /*
+    Mobile par overlay hide rahega,
+    kyun ke small circle mein text crowded ho sakta hai.
+  */
+
+  .project-orbit-overlay {
+    display: none;
+  }
+
+  .projects-orbit-center {
+    width: 115px;
+    height: 115px;
+
+    border-width: 5px;
+  }
+
+  .projects-orbit-center span {
+    font-size: 12px;
+  }
+
+  .projects-orbit-center strong {
+    font-size: 8px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .projects-orbit-area {
+    width: 300px;
+    height: 300px;
+  }
+
+  .projects-orbit-area::before {
+    width: 260px;
+    height: 260px;
+  }
+
+  .project-orbit-item {
+    width: 78px;
+    height: 78px;
+
+    margin: -39px;
+
+    transform:
+      rotate(var(--angle))
+      translateY(-130px);
+  }
+
+  .project-orbit-card {
+    transform:
+      rotate(calc(var(--angle) * -1));
+  }
+
+  .project-orbit-item:hover .project-orbit-card {
+    transform:
+      rotate(calc(var(--angle) * -1))
+      scale(1.12);
+  }
+
+  .projects-orbit-center {
+    width: 100px;
+    height: 100px;
+  }
+}

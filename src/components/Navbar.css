@@ -41,7 +41,7 @@
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 1px;
+  gap: 0px;
 
   text-decoration: none;
   flex-shrink: 0;
@@ -51,6 +51,7 @@
   height: 52px;
   width: auto;
   object-fit: contain;
+  
 }
 
 .navbar-brand-text {

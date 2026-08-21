@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import "./Navbar.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
+import "./Navbar.css";
 import logo from "../assets/logo/maverick-logo.png";
 
 const navLinks = [
@@ -13,6 +14,10 @@ const navLinks = [
     name: "Services",
     href: "#services",
   },
+  {
+  name: "Projects",
+  href: "#projects",
+},
   {
     name: "Why Choose Us",
     href: "#why-us",
@@ -30,8 +35,52 @@ const navLinks = [
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  // Handle navbar section navigation
+  const handleNavigation = (href) => {
+    closeMenu();
+
+    // If already on home page
+    if (location.pathname === "/") {
+      const element = document.querySelector(href);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    // If on service/detail page
+    navigate(`/${href}`);
+  };
+
+  // Logo click
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    if (location.pathname === "/") {
+      const homeElement = document.querySelector("#home");
+
+      if (homeElement) {
+        homeElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      navigate("/");
+    }
   };
 
   return (
@@ -39,25 +88,40 @@ function Navbar() {
       <div className="navbar-container">
 
         {/* Logo + Company Name */}
-<a href="#home" className="navbar-brand" onClick={closeMenu}>
-  <img
-    src={logo}
-    alt="Maverick Engineers Logo"
-    className="navbar-logo-image"
-  />
+        <a
+          href="/"
+          className="navbar-brand"
+          onClick={handleLogoClick}
+        >
+          <img
+            src={logo}
+            alt="Maverick Engineers Logo"
+            className="navbar-logo-image"
+          />
 
-  <div className="navbar-brand-text">
-    <span className="brand-main">MAVERICK</span>
-    <span className="brand-sub">ENGINEERS</span>
-  </div>
-</a>
+          <div className="navbar-brand-text">
+            <span className="brand-main">
+              MAVERICK
+            </span>
+
+            <span className="brand-sub">
+              ENGINEERS
+            </span>
+          </div>
+        </a>
+
         {/* Desktop Navigation */}
         <nav className="navbar-links">
+
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               className="navbar-link"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation(link.href);
+              }}
             >
               {link.name}
             </a>
@@ -71,6 +135,7 @@ function Navbar() {
             <Phone size={17} />
             <span>Call Now</span>
           </a>
+
         </nav>
 
         {/* Mobile Menu Button */}
@@ -86,6 +151,7 @@ function Navbar() {
             <Menu size={28} />
           )}
         </button>
+
       </div>
 
       {/* Mobile Navigation */}
@@ -97,7 +163,10 @@ function Navbar() {
               key={link.name}
               href={link.href}
               className="mobile-link"
-              onClick={closeMenu}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation(link.href);
+              }}
             >
               {link.name}
             </a>
