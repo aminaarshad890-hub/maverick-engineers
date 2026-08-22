@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-
 import "./Navbar.css";
 import logo from "../assets/logo/maverick-logo.png";
 
@@ -15,9 +14,9 @@ const navLinks = [
     href: "#services",
   },
   {
-  name: "Projects",
-  href: "#projects",
-},
+    name: "Projects",
+    href: "#projects",
+  },
   {
     name: "Why Choose Us",
     href: "#why-us",
@@ -42,11 +41,9 @@ function Navbar() {
     setIsOpen(false);
   };
 
-  // Handle navbar section navigation
   const handleNavigation = (href) => {
     closeMenu();
 
-    // If already on home page
     if (location.pathname === "/") {
       const element = document.querySelector(href);
 
@@ -56,15 +53,12 @@ function Navbar() {
           block: "start",
         });
       }
-
       return;
     }
 
-    // If on service/detail page
     navigate(`/${href}`);
   };
 
-  // Logo click
   const handleLogoClick = (e) => {
     e.preventDefault();
     closeMenu();
@@ -87,17 +81,19 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
 
-        {/* Logo + Company Name */}
+        {/* Logo */}
         <a
           href="/"
           className="navbar-brand"
           onClick={handleLogoClick}
         >
-          <img
-            src={logo}
-            alt="Maverick Engineers Logo"
-            className="navbar-logo-image"
-          />
+          <div className="navbar-logo-box">
+            <img
+              src={logo}
+              alt="Maverick Engineers Logo"
+              className="navbar-logo-image"
+            />
+          </div>
 
           <div className="navbar-brand-text">
             <span className="brand-main">
@@ -112,7 +108,6 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="navbar-links">
-
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -127,63 +122,73 @@ function Navbar() {
             </a>
           ))}
 
-          {/* Call Now */}
+          {/* Call Button */}
           <a
             href="tel:0553731009"
             className="call-button"
           >
-            <Phone size={17} />
+            <span className="call-icon">
+              <Phone size={16} />
+            </span>
+
             <span>Call Now</span>
           </a>
-
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="menu-button"
+          className={`menu-button ${isOpen ? "menu-active" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
           {isOpen ? (
-            <X size={28} />
+            <X size={25} />
           ) : (
-            <Menu size={28} />
+            <Menu size={25} />
           )}
         </button>
-
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <nav className="mobile-menu">
+      <div
+        className={`mobile-menu ${
+          isOpen ? "mobile-menu-open" : ""
+        }`}
+      >
+        <nav className="mobile-menu-inner">
 
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <a
               key={link.name}
               href={link.href}
               className="mobile-link"
+              style={{
+                "--delay": `${index * 0.04}s`,
+              }}
               onClick={(e) => {
                 e.preventDefault();
                 handleNavigation(link.href);
               }}
             >
-              {link.name}
+              <span>{link.name}</span>
+              <span className="mobile-link-arrow">→</span>
             </a>
           ))}
 
-          {/* Mobile Call Button */}
           <a
             href="tel:0553731009"
             className="call-button mobile-call"
             onClick={closeMenu}
           >
-            <Phone size={18} />
+            <span className="call-icon">
+              <Phone size={17} />
+            </span>
+
             <span>Call Now</span>
           </a>
-
         </nav>
-      )}
+      </div>
     </header>
   );
 }

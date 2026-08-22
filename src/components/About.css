@@ -5,22 +5,17 @@
 .about-section {
   width: 100%;
   padding: 110px 0;
-
   background: #ffffff;
 }
 
 .about-container {
   width: 100%;
   max-width: 1500px;
-
   margin: 0 auto;
   padding: 0 5%;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
-
   gap: 60px;
 }
 
@@ -31,7 +26,6 @@
 .about-content {
   width: 100%;
   max-width: 850px;
-
   text-align: center;
 }
 
@@ -39,46 +33,34 @@
 
 .about-label {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   color: #1689df;
-
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 3px;
-
   text-align: center;
 }
 
 .about-label::before {
   content: "";
-
   width: 32px;
   height: 2px;
-
   background: #1689df;
 }
 
-/* Main Heading */
+/* =========================================
+   MAIN HEADING
+========================================= */
 
 .about-content h2 {
   margin-top: 16px;
-
   color: #1689df;
-
-  font-size: clamp(40px, 5vw, 62px);
-
-  line-height: 1.08;
-
+  font-size: clamp(36px, 4.2vw, 52px);
+  line-height: 1.12;
   font-weight: 800;
-
-  letter-spacing: -1.5px;
-
+  letter-spacing: -1.2px;
   text-align: center;
 }
 
@@ -88,37 +70,30 @@
   color: #1689df;
 }
 
-/* Intro */
+/* =========================================
+   INTRO
+========================================= */
 
 .about-intro {
   max-width: 760px;
-
   margin: 28px auto 0;
-
   color: #334155;
-
   font-size: 18px;
-
   line-height: 1.7;
-
   font-weight: 500;
-
   text-align: center;
 }
 
-/* Description */
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .about-description {
   max-width: 760px;
-
   margin: 15px auto 0;
-
   color: #64748b;
-
   font-size: 15px;
-
   line-height: 1.85;
-
   text-align: center;
 }
 
@@ -128,24 +103,16 @@
 
 .about-button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   margin-top: 32px;
-
   padding: 14px 25px;
-
   border-radius: 6px;
-
   background: #1689df;
   color: #ffffff;
-
   text-decoration: none;
-
   font-size: 14px;
   font-weight: 700;
-
   transition:
     transform 0.3s ease,
     background 0.3s ease,
@@ -154,11 +121,8 @@
 
 .about-button:hover {
   background: #0874c4;
-
   color: #ffffff;
-
   transform: translateY(-3px);
-
   box-shadow: 0 12px 25px rgba(22, 137, 223, 0.25);
 }
 
@@ -169,11 +133,8 @@
 .about-features {
   width: 100%;
   max-width: 1000px;
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 18px;
 }
 
@@ -181,17 +142,11 @@
 
 .about-feature {
   min-height: 210px;
-
   padding: 28px;
-
   background: #f7fafc;
-
   border: 1px solid #e8eef3;
-
   border-radius: 8px;
-
   text-align: left;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -200,9 +155,7 @@
 
 .about-feature:hover {
   transform: translateY(-6px);
-
   border-color: rgba(22, 137, 223, 0.25);
-
   box-shadow: 0 15px 35px rgba(7, 21, 37, 0.07);
 }
 
@@ -211,19 +164,13 @@
 .about-feature-icon {
   width: 52px;
   height: 52px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin-bottom: 20px;
-
   border-radius: 8px;
-
   background: #eaf6ff;
-
   color: #1689df;
-
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -232,9 +179,7 @@
 
 .about-feature:hover .about-feature-icon {
   background: #1689df;
-
   color: #ffffff;
-
   transform: translateY(-2px);
 }
 
@@ -242,11 +187,8 @@
 
 .about-feature h3 {
   margin-bottom: 10px;
-
   color: #071525;
-
   font-size: 17px;
-
   font-weight: 700;
 }
 
@@ -254,9 +196,7 @@
 
 .about-feature p {
   color: #64748b;
-
   font-size: 13px;
-
   line-height: 1.7;
 }
 
@@ -265,7 +205,6 @@
 ========================================= */
 
 @media (max-width: 1200px) {
-
   .about-container {
     padding: 0 4%;
   }
@@ -280,14 +219,12 @@
 ========================================= */
 
 @media (max-width: 900px) {
-
   .about-section {
     padding: 90px 0;
   }
 
   .about-container {
     padding: 0 5%;
-
     gap: 50px;
   }
 
@@ -296,7 +233,7 @@
   }
 
   .about-content h2 {
-    font-size: 48px;
+    font-size: 44px;
   }
 
   .about-intro {
@@ -309,9 +246,7 @@
 
   .about-features {
     width: 100%;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 16px;
   }
 }
@@ -321,14 +256,12 @@
 ========================================= */
 
 @media (max-width: 600px) {
-
   .about-section {
     padding: 75px 0;
   }
 
   .about-container {
     padding: 0 20px;
-
     gap: 40px;
   }
 
@@ -340,7 +273,6 @@
 
   .about-label {
     font-size: 10px;
-
     letter-spacing: 2px;
   }
 
@@ -352,13 +284,9 @@
 
   .about-content h2 {
     margin-top: 12px;
-
-    font-size: 38px;
-
+    font-size: 34px;
     line-height: 1.15;
-
-    letter-spacing: -1px;
-
+    letter-spacing: -0.8px;
     color: #1689df;
   }
 
@@ -370,9 +298,7 @@
 
   .about-intro {
     margin-top: 22px;
-
     font-size: 16px;
-
     line-height: 1.7;
   }
 
@@ -380,9 +306,7 @@
 
   .about-description {
     margin-top: 14px;
-
     font-size: 14px;
-
     line-height: 1.75;
   }
 
@@ -390,9 +314,7 @@
 
   .about-button {
     margin-top: 26px;
-
     width: 100%;
-
     max-width: 240px;
   }
 
@@ -400,13 +322,11 @@
 
   .about-features {
     grid-template-columns: 1fr;
-
     gap: 14px;
   }
 
   .about-feature {
     min-height: auto;
-
     padding: 24px;
   }
 
@@ -429,13 +349,12 @@
 ========================================= */
 
 @media (max-width: 380px) {
-
   .about-container {
     padding: 0 16px;
   }
 
   .about-content h2 {
-    font-size: 33px;
+    font-size: 31px;
   }
 
   .about-intro {

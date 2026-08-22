@@ -19,155 +19,155 @@ export const services = [
     id: 1,
     title: "Genset Sales & Services",
     slug: "genset-sales-services",
+    image: "/images/services/genset.jpg",
     description:
       "Reliable genset sales, installation, maintenance and professional support for dependable power solutions.",
-    image: "/images/services/genset.jpg",
-    icon: Zap,
     details:
-      "We provide complete genset solutions including sales, installation, maintenance, troubleshooting and professional technical support for residential, commercial and industrial power requirements.",
+      "We provide complete genset sales, installation, maintenance and support services to ensure reliable and uninterrupted power for residential, commercial and industrial requirements.",
+    icon: Zap,
   },
 
   {
     id: 2,
     title: "Power Factor Panels",
     slug: "power-factor-panels",
+    image: "/images/services/power-factor.jpg",
     description:
       "Efficient power factor solutions designed to improve electrical performance and reduce energy losses.",
-    image: "/images/services/power-factor.jpg",
-    icon: Gauge,
     details:
-      "Our power factor panel solutions help improve electrical efficiency, optimize power consumption and reduce unnecessary energy losses in electrical systems.",
+      "Our power factor panel solutions help improve electrical efficiency, reduce energy losses and maintain reliable power performance.",
+    icon: Gauge,
   },
 
   {
     id: 3,
     title: "Telecommunication Equipment Installation",
     slug: "telecommunication-equipment-installation",
+    image: "/images/services/telecommunication.jpg",
     description:
       "Professional installation and setup of telecommunication equipment for reliable connectivity.",
-    image: "/images/services/telecommunication.jpg",
-    icon: Radio,
     details:
-      "We provide professional installation and setup of telecommunication equipment to support reliable communication, connectivity and network infrastructure.",
+      "We provide professional installation and setup of telecommunication equipment for dependable communication and connectivity.",
+    icon: Radio,
   },
 
   {
     id: 4,
     title: "Security System Installation",
     slug: "security-system-installation",
+    image: "/images/services/security.jpg",
     description:
       "Modern security system installation to help protect residential and commercial environments.",
-    image: "/images/services/security.jpg",
-    icon: ShieldCheck,
     details:
-      "Our security solutions include professional installation and configuration of modern security systems for residential, commercial and industrial environments.",
+      "Our security system installation services provide modern and dependable solutions for residential and commercial environments.",
+    icon: ShieldCheck,
   },
 
   {
     id: 5,
     title: "Cooling Systems",
     slug: "cooling-systems",
+    image: "/images/services/cooling.jpg",
     description:
       "Professional cooling solutions designed for comfortable and efficient indoor environments.",
-    image: "/images/services/cooling.jpg",
-    icon: Snowflake,
     details:
-      "We provide professional cooling system solutions designed to maintain comfortable indoor environments while focusing on reliable and efficient operation.",
+      "We provide professional cooling system solutions designed for efficient operation and comfortable indoor environments.",
+    icon: Snowflake,
   },
 
   {
     id: 6,
     title: "Smart Home Services",
     slug: "smart-home-services",
+    image: "/images/services/smart-home.jpg",
     description:
       "Smart home solutions that bring convenience, automation and intelligent control to modern spaces.",
-    image: "/images/services/smart-home.jpg",
-    icon: House,
     details:
-      "Our smart home services bring automation and intelligent control to modern spaces, helping users manage lighting, security and other connected systems.",
+      "Our smart home services bring automation, convenience and intelligent control to modern residential spaces.",
+    icon: House,
   },
 
   {
     id: 7,
     title: "Domestic & Industrial Wiring",
     slug: "domestic-industrial-wiring",
+    image: "/images/services/wiring.jpg",
     description:
       "Safe and professional electrical wiring solutions for domestic and industrial requirements.",
-    image: "/images/services/wiring.jpg",
-    icon: Cable,
     details:
-      "We provide safe and professional wiring services for homes, commercial properties and industrial facilities, with a focus on reliability and proper electrical installation.",
+      "We provide safe and professional wiring solutions for domestic, commercial and industrial electrical requirements.",
+    icon: Cable,
   },
 
   {
     id: 8,
     title: "Solar System Installation",
     slug: "solar-system-installation",
+    image: "/images/services/solar.jpg",
     description:
       "Professional solar system installation designed to provide efficient and reliable renewable energy.",
-    image: "/images/services/solar.jpg",
-    icon: Sun,
     details:
-      "Our solar installation services provide renewable energy solutions designed around efficiency, reliability and the specific power requirements of each project.",
+      "Our solar installation services provide efficient renewable energy solutions designed around your power requirements.",
+    icon: Sun,
   },
 
   {
     id: 9,
     title: "Lighting Solutions",
     slug: "lighting-solutions",
+    image: "/images/services/lighting.jpg",
     description:
       "Modern and efficient lighting solutions for residential, commercial and industrial spaces.",
-    image: "/images/services/lighting.jpg",
-    icon: Lightbulb,
     details:
-      "We design and install modern lighting solutions for residential, commercial and industrial spaces, focusing on functionality, efficiency and appearance.",
+      "We offer modern and efficient lighting solutions for residential, commercial and industrial environments.",
+    icon: Lightbulb,
   },
 
   {
     id: 10,
     title: "Power Generators",
     slug: "power-generators",
+    image: "/images/services/generators.jpg",
     description:
       "Reliable generator solutions for dependable backup and continuous power requirements.",
-    image: "/images/services/generators.jpg",
-    icon: BatteryCharging,
     details:
-      "We offer reliable generator solutions for backup and continuous power requirements, including installation, maintenance and technical support.",
+      "We provide dependable generator solutions for backup and continuous power requirements across different environments.",
+    icon: BatteryCharging,
   },
 
   {
     id: 11,
     title: "Electrical Services",
     slug: "electrical-services",
+    image: "/images/services/electrical.jpg",
     description:
       "Comprehensive electrical services focused on safety, reliability and efficient performance.",
-    image: "/images/services/electrical.jpg",
-    icon: Settings,
     details:
-      "Our electrical services cover a wide range of installation, maintenance and troubleshooting requirements for residential, commercial and industrial projects.",
+      "Our electrical services focus on safe installation, maintenance, reliability and efficient electrical performance.",
+    icon: Settings,
   },
 
   {
     id: 12,
     title: "Mechanical Services",
     slug: "mechanical-services",
+    image: "/images/services/mechanical.jpg",
     description:
       "Professional mechanical engineering services for residential, commercial and industrial needs.",
-    image: "/images/services/mechanical.jpg",
-    icon: Cog,
     details:
-      "We provide professional mechanical engineering services for different project requirements, with an emphasis on reliable performance and quality workmanship.",
+      "We provide professional mechanical engineering solutions for residential, commercial and industrial requirements.",
+    icon: Cog,
   },
 
   {
     id: 13,
     title: "Civil Services",
     slug: "civil-services",
+    image: "/images/services/civil.jpg",
     description:
       "Reliable civil engineering solutions supporting construction and infrastructure requirements.",
-    image: "/images/services/civil.jpg",
-    icon: Building2,
     details:
-      "Our civil engineering services support construction and infrastructure projects with practical, reliable and professional engineering solutions.",
+      "Our civil engineering services support construction, infrastructure and project development requirements.",
+    icon: Building2,
   },
 ];
