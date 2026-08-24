@@ -3,27 +3,22 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-import {
-  useEffect,
-} from "react";
-
+import { useEffect } from "react";
 import {
   useNavigate,
   useParams,
 } from "react-router-dom";
 
 import { services } from "../data/services";
-
 import "./ServiceDetails.css";
 
 function ServiceDetails() {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  /* =========================================
-     START SERVICE DETAILS FROM TOP
-  ========================================= */
-
+  // =========================================
+  // START SERVICE DETAILS FROM TOP
+  // =========================================
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -32,39 +27,43 @@ function ServiceDetails() {
     });
   }, [slug]);
 
-  /* =========================================
-     FIND SERVICE
-  ========================================= */
-
+  // =========================================
+  // FIND SERVICE
+  // =========================================
   const service = services.find(
     (item) => item.slug === slug
   );
 
-  /* =========================================
-     BACK TO SERVICES
-  ========================================= */
-
+  // =========================================
+  // BACK TO SERVICES
+  // =========================================
   const handleBackToServices = () => {
     navigate("/", {
       state: {
-        scrollTo: "services",
+        scrollTo: "#services",
       },
     });
   };
 
-  /* =========================================
-     SERVICE NOT FOUND
-  ========================================= */
+  // =========================================
+  // CONTACT
+  // =========================================
+  const handleContact = () => {
+    navigate("/", {
+      state: {
+        scrollTo: "#contact",
+      },
+    });
+  };
 
+  // =========================================
+  // SERVICE NOT FOUND
+  // =========================================
   if (!service) {
     return (
       <section className="service-details-page">
-
         <div className="service-not-found">
-
-          <h1>
-            Service Not Found
-          </h1>
+          <h1>Service Not Found</h1>
 
           <p>
             The service you are looking for
@@ -72,16 +71,14 @@ function ServiceDetails() {
           </p>
 
           <button
+            type="button"
             className="back-services-btn"
             onClick={handleBackToServices}
           >
             <ArrowLeft size={18} />
-
             Back to Services
           </button>
-
         </div>
-
       </section>
     );
   }
@@ -94,7 +91,6 @@ function ServiceDetails() {
       {/* =========================================
           HERO
       ========================================= */}
-
       <div className="service-details-hero">
 
         <div className="service-details-overlay"></div>
@@ -121,23 +117,20 @@ function ServiceDetails() {
           </p>
 
         </div>
-
       </div>
 
       {/* =========================================
           DETAILS CONTENT
       ========================================= */}
-
       <div className="service-details-container">
 
         {/* Back Button */}
-
         <button
+          type="button"
           className="back-services-btn"
           onClick={handleBackToServices}
         >
           <ArrowLeft size={18} />
-
           Back to Services
         </button>
 
@@ -146,16 +139,13 @@ function ServiceDetails() {
           {/* =====================================
               LEFT CONTENT
           ===================================== */}
-
           <div className="service-details-main">
 
             <div className="service-details-icon">
-
               <Icon
                 size={34}
                 strokeWidth={1.7}
               />
-
             </div>
 
             <span className="service-details-small-label">
@@ -185,11 +175,9 @@ function ServiceDetails() {
           {/* =====================================
               RIGHT SIDEBAR
           ===================================== */}
-
           <div className="service-details-sidebar">
 
             {/* Why Choose Us */}
-
             <div className="service-info-card">
 
               <h3>
@@ -197,49 +185,36 @@ function ServiceDetails() {
               </h3>
 
               <div className="service-feature">
-
                 <CheckCircle2 size={20} />
-
                 <span>
                   Professional Service
                 </span>
-
               </div>
 
               <div className="service-feature">
-
                 <CheckCircle2 size={20} />
-
                 <span>
                   Reliable Solutions
                 </span>
-
               </div>
 
               <div className="service-feature">
-
                 <CheckCircle2 size={20} />
-
                 <span>
                   Quality Workmanship
                 </span>
-
               </div>
 
               <div className="service-feature">
-
                 <CheckCircle2 size={20} />
-
                 <span>
                   Customer Focused
                 </span>
-
               </div>
 
             </div>
 
             {/* Contact Card */}
-
             <div className="service-contact-card">
 
               <span>
@@ -251,18 +226,11 @@ function ServiceDetails() {
               </h3>
 
               <button
-                onClick={() =>
-                  navigate("/", {
-                    state: {
-                      scrollTo: "contact",
-                    },
-                  })
-                }
+                type="button"
+                onClick={handleContact}
               >
                 Contact Us
-
                 <ArrowLeft size={18} />
-
               </button>
 
             </div>

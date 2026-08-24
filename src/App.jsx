@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import { useEffect } from "react";
 
@@ -14,30 +20,59 @@ import Footer from "./components/Footer";
 import ServiceDetails from "./pages/ServiceDetails";
 import ProjectDetails from "./pages/ProjectDetails";
 
-
 // =========================================
-// SCROLL TO TOP ON PAGE CHANGE
+// SCROLL HANDLER
 // =========================================
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
+function ScrollHandler() {
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // =========================================
+    // SPECIFIC SECTION SCROLL
+    // ONLY WHEN STATE EXISTS
+    // =========================================
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      const sectionId = location.state.scrollTo;
+
+      const timer = setTimeout(() => {
+        const element = document.querySelector(sectionId);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+
+        // IMPORTANT:
+        // Clear the navigation state so that
+        // refreshing Home does NOT open Services.
+        navigate("/", {
+          replace: true,
+          state: {},
+        });
+      }, 150);
+
+      return () => clearTimeout(timer);
+    }
+
+    // =========================================
+    // NORMAL PAGE CHANGE
+    // =========================================
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "instant",
     });
-  }, [pathname]);
+  }, [location.pathname, location.state, navigate]);
 
   return null;
 }
 
-
 // =========================================
 // HOME
 // =========================================
-
 function Home() {
   return (
     <>
@@ -60,33 +95,28 @@ function Home() {
   );
 }
 
-
 // =========================================
 // APP
 // =========================================
-
 function App() {
   return (
     <BrowserRouter>
 
-      <ScrollToTop />
+      <ScrollHandler />
 
       <Routes>
 
         {/* =========================
             HOME PAGE
         ========================= */}
-
         <Route
           path="/"
           element={<Home />}
         />
 
-
         {/* =========================
             SERVICE DETAILS
         ========================= */}
-
         <Route
           path="/services/:slug"
           element={
@@ -100,11 +130,9 @@ function App() {
           }
         />
 
-
         {/* =========================
             PROJECT DETAILS
         ========================= */}
-
         <Route
           path="/projects/:slug"
           element={

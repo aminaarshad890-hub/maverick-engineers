@@ -1,22 +1,77 @@
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  ArrowLeft,
+  CheckCircle2,
+} from "lucide-react";
+
+import {
+  useEffect,
+} from "react";
+
+import {
+  useNavigate,
+  useParams,
+} from "react-router-dom";
+
 import { projects } from "../data/projects";
+
 import "./ProjectDetails.css";
 
 function ProjectDetails() {
   const { slug } = useParams();
   const navigate = useNavigate();
 
+  // =========================================
+  // START PROJECT DETAILS FROM TOP
+  // =========================================
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [slug]);
+
+  // =========================================
+  // FIND PROJECT
+  // =========================================
   const project = projects.find(
     (item) => item.slug === slug
   );
 
-  // Project not found
+  // =========================================
+  // BACK TO PROJECTS
+  // =========================================
+  const handleBackToProjects = () => {
+    navigate("/", {
+      state: {
+        scrollTo: "projects",
+      },
+    });
+  };
+
+  // =========================================
+  // CONTACT
+  // =========================================
+  const handleContact = () => {
+    navigate("/", {
+      state: {
+        scrollTo: "contact",
+      },
+    });
+  };
+
+  // =========================================
+  // PROJECT NOT FOUND
+  // =========================================
   if (!project) {
     return (
       <section className="project-details-page">
+
         <div className="project-not-found">
-          <h1>Project Not Found</h1>
+
+          <h1>
+            Project Not Found
+          </h1>
 
           <p>
             We could not find this project.
@@ -25,12 +80,14 @@ function ProjectDetails() {
           <button
             type="button"
             className="back-projects-btn"
-            onClick={() => navigate("/#projects")}
+            onClick={handleBackToProjects}
           >
             <ArrowLeft size={18} />
             Back to Projects
           </button>
+
         </div>
+
       </section>
     );
   }
@@ -38,11 +95,12 @@ function ProjectDetails() {
   return (
     <main className="project-details-page">
 
-      {/* =========================
+      {/* =========================================
           HERO
-      ========================= */}
+      ========================================= */}
 
       <section className="project-details-hero">
+
         <img
           src={project.image}
           alt={project.title}
@@ -52,6 +110,7 @@ function ProjectDetails() {
         <div className="project-details-overlay"></div>
 
         <div className="project-details-hero-content">
+
           <span className="project-details-label">
             OUR PROJECT
           </span>
@@ -63,29 +122,33 @@ function ProjectDetails() {
           <p>
             {project.category}
           </p>
+
         </div>
+
       </section>
 
-
-      {/* =========================
+      {/* =========================================
           CONTENT
-      ========================= */}
+      ========================================= */}
 
       <section className="project-details-container">
+
+        {/* Back Button */}
 
         <button
           type="button"
           className="back-projects-btn"
-          onClick={() => navigate("/#projects")}
+          onClick={handleBackToProjects}
         >
           <ArrowLeft size={18} />
           Back to Projects
         </button>
 
-
         <div className="project-details-content">
 
-          {/* Main Content */}
+          {/* =====================================
+              MAIN CONTENT
+          ===================================== */}
 
           <div className="project-details-main">
 
@@ -110,8 +173,9 @@ function ProjectDetails() {
 
           </div>
 
-
-          {/* Sidebar */}
+          {/* =====================================
+              SIDEBAR
+          ===================================== */}
 
           <aside className="project-details-sidebar">
 
@@ -151,7 +215,6 @@ function ProjectDetails() {
 
             </div>
 
-
             <div className="project-contact-card">
 
               <span>
@@ -164,7 +227,7 @@ function ProjectDetails() {
 
               <button
                 type="button"
-                onClick={() => navigate("/#contact")}
+                onClick={handleContact}
               >
                 Contact Us
                 <ArrowLeft size={18} />
@@ -175,7 +238,6 @@ function ProjectDetails() {
           </aside>
 
         </div>
-
       </section>
 
     </main>

@@ -123,20 +123,10 @@ export const services = [
     icon: Lightbulb,
   },
 
-  {
-    id: 10,
-    title: "Power Generators",
-    slug: "power-generators",
-    image: "/images/services/generators.jpg",
-    description:
-      "Reliable generator solutions for dependable backup and continuous power requirements.",
-    details:
-      "We provide dependable generator solutions for backup and continuous power requirements across different environments.",
-    icon: BatteryCharging,
-  },
+  
 
   {
-    id: 11,
+    id: 10,
     title: "Electrical Services",
     slug: "electrical-services",
     image: "/images/services/electrical.jpg",
@@ -148,7 +138,7 @@ export const services = [
   },
 
   {
-    id: 12,
+    id: 11,
     title: "Mechanical Services",
     slug: "mechanical-services",
     image: "/images/services/mechanical.jpg",
@@ -160,7 +150,7 @@ export const services = [
   },
 
   {
-    id: 13,
+    id: 12,
     title: "Civil Services",
     slug: "civil-services",
     image: "/images/services/civil.jpg",
