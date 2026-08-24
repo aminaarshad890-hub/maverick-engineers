@@ -1,6 +1,5 @@
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { projects } from "../data/projects";
 import "./ProjectDetails.css";
 
@@ -17,7 +16,6 @@ function ProjectDetails() {
     return (
       <section className="project-details-page">
         <div className="project-not-found">
-
           <h1>Project Not Found</h1>
 
           <p>
@@ -27,12 +25,11 @@ function ProjectDetails() {
           <button
             type="button"
             className="back-projects-btn"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/#projects")}
           >
             <ArrowLeft size={18} />
             Back to Projects
           </button>
-
         </div>
       </section>
     );
@@ -46,7 +43,6 @@ function ProjectDetails() {
       ========================= */}
 
       <section className="project-details-hero">
-
         <img
           src={project.image}
           alt={project.title}
@@ -56,7 +52,6 @@ function ProjectDetails() {
         <div className="project-details-overlay"></div>
 
         <div className="project-details-hero-content">
-
           <span className="project-details-label">
             OUR PROJECT
           </span>
@@ -68,10 +63,9 @@ function ProjectDetails() {
           <p>
             {project.category}
           </p>
-
         </div>
-
       </section>
+
 
       {/* =========================
           CONTENT
@@ -82,11 +76,12 @@ function ProjectDetails() {
         <button
           type="button"
           className="back-projects-btn"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/#projects")}
         >
           <ArrowLeft size={18} />
           Back to Projects
         </button>
+
 
         <div className="project-details-content">
 
@@ -114,6 +109,7 @@ function ProjectDetails() {
             </p>
 
           </div>
+
 
           {/* Sidebar */}
 
@@ -154,6 +150,7 @@ function ProjectDetails() {
               </div>
 
             </div>
+
 
             <div className="project-contact-card">
 
